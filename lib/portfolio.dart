@@ -55,56 +55,158 @@ class _PortfolioHomePageState extends State<PortfolioHomePage>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Hi, I’m Mahlet 👋",
-                style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
+             Container(
+  padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+  color: const Color(0xFF0F172A), // dark navy blue
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      // Logo (you can replace with Image.asset or an SVG)
+      const Text(
+        "Logo.",
+        style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+          fontSize: 24,
+        ),
+      ),
+
+      // Navigation Menu
+      Row(
+        children: [
+          _navItem("Home", isActive: true, onTap: () => scrollTo(0)),
+          const SizedBox(width: 30),
+          _navItem("About", onTap: () => scrollTo(600)),
+          const SizedBox(width: 30),
+          _navItem("Skills", onTap: () => scrollTo(900)),
+          const SizedBox(width: 30),
+          _navItem("Portfolio", onTap: () => scrollTo(1200)),
+          const SizedBox(width: 30),
+          _navItem("Contact", onTap: () => scrollTo(1500)),
+        ],
+      ),
+    ],
+  ),
+),
+
+              Container(
+  height: 600,
+  width: double.infinity,
+  padding: const EdgeInsets.symmetric(horizontal: 30),
+  // decoration: const BoxDecoration(
+  //   gradient: LinearGradient(
+  //     colors: [Color(0xFF0F2027), Color(0xFF203A43), Color(0xFF2C5364)],
+  //     begin: Alignment.topLeft,
+  //     end: Alignment.bottomRight,
+  //   ),
+  // ),
+  child: Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Row(
+        children: [
+          Icon(Icons.circle, color: Colors.pinkAccent, size: 12),
+          const SizedBox(width: 8),
+          Icon(Icons.circle, color: Colors.blueAccent, size: 12),
+          const SizedBox(width: 8),
+          Icon(Icons.circle, color: Colors.purpleAccent, size: 12),
+        ],
+      ),
+      const SizedBox(height: 20),
+      RichText(
+        text: const TextSpan(
+          style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+          children: [
+            TextSpan(text: "Hi, I'm ", style: TextStyle(color: Colors.white)),
+            TextSpan(
+                text: "Mahlet ",
+                style: TextStyle(color: Colors.pinkAccent)),
+            TextSpan(
+                text: "Solomon",
+                style: TextStyle(color: Colors.blueAccent)),
+          ],
+        ),
+      ),
+      const SizedBox(height: 10),
+      const Text(
+        "Backend Developer | Node.js | Flutter Lover",
+        style: TextStyle(
+          fontSize: 20,
+          color: Colors.white70,
+        ),
+      ),
+      const SizedBox(height: 25),
+      const Text(
+        "I'm a professional Backend Developer. My main goal is to help &\nsatisfy local and global clients by building scalable backend systems.",
+        style: TextStyle(fontSize: 16, color: Colors.white54),
+      ),
+      const SizedBox(height: 30),
+      Row(
+        children: [
+          _socialButton(Icons.linked_camera, Colors.purple),
+          const SizedBox(width: 10),
+          _socialButton(Icons.telegram, Colors.lightBlue),
+          const SizedBox(width: 10),
+          _socialButton(Icons.facebook, Colors.indigo),
+        ],
+      ),
+      const SizedBox(height: 30),
+      SizedBox(
+        height: 45,
+        child: ElevatedButton(
+          onPressed: () {
+            // download CV or open URL
+          },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.pinkAccent,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30),
+            ),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+          ),
+          child: const Text(
+            "Download CV",
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+        ),
+      ),
+    ],
+  ),
+),
+
+              // Container(
+              //   // to cover whole page of a front page
+              //   height: 600,
+               
+              //   child: Column(
+              //     children: [
+              //       Text(
+              //         "Hi, I’m Mahlet Solomon 👋",
+              //         style: TextStyle(
+              //           fontSize: 32,
+              //           fontWeight: FontWeight.bold,
+              //           color: Colors.white,
+              //         ),
+              //       ),
+              // Text(
+              //   "Backend Developer | Node.js | Flutter Lover",
+              //   style: TextStyle(
+              //     fontSize: 20,
+              //     color: Colors.purpleAccent,
+              //   ),
+              // ),
+              //     ],
+              //   ),
+              // ),
               const SizedBox(height: 10),
-              Text(
-                "Backend Developer | Node.js | Flutter Lover",
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.purpleAccent,
-                ),
-              ),
               const SizedBox(height: 20),
-              Row(
-                children: [
-                  ElevatedButton(
-                    onPressed: () => scrollTo(600),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.purple,
-                    ),
-                    child: const Text("About Me"),
-                  ),
-                  const SizedBox(width: 10),
-                  ElevatedButton(
-                    onPressed: () => scrollTo(1200),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.purple,
-                    ),
-                    child: const Text("Projects"),
-                  ),
-                ],
-              ),
               const SizedBox(height: 40),
-              Text(
-                "🌟 About Me",
-                style: TextStyle(
-                  fontSize: 26,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-              const SizedBox(height: 10),
-              Text(
-                "I’m a passionate backend developer focused on building efficient, scalable systems using Node.js and Flutter. I love solving real-world problems and crafting backend solutions that power great user experiences.",
-                style: TextStyle(fontSize: 16, color: Colors.white70),
-              ),
+             
               const SizedBox(height: 30),
               Text(
                 "🛠 Skills",
@@ -226,4 +328,25 @@ class _PortfolioHomePageState extends State<PortfolioHomePage>
       labelStyle: const TextStyle(color: Colors.white),
     );
   }
+}
+Widget _socialButton(IconData icon, Color color) {
+  return CircleAvatar(
+    backgroundColor: Colors.white10,
+    radius: 22,
+    child: Icon(icon, color: color, size: 20),
+  );
+}
+
+Widget _navItem(String title, {bool isActive = false, required VoidCallback onTap}) {
+  return GestureDetector(
+    onTap: onTap,
+    child: Text(
+      title,
+      style: TextStyle(
+        color: isActive ? Colors.pinkAccent : Colors.white,
+        fontWeight: FontWeight.w600,
+        fontSize: 16,
+      ),
+    ),
+  );
 }
