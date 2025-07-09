@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portifolio/skillsction.dart';
 
 
 class PortfolioHomePage extends StatefulWidget {
@@ -216,20 +217,10 @@ class _PortfolioHomePageState extends State<PortfolioHomePage>
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 10),
-              Wrap(
-                spacing: 12,
-                runSpacing: 12,
-                children: [
-                  _skillChip("Node.js"),
-                  _skillChip("Express"),
-                  _skillChip("MongoDB"),
-                  _skillChip("Flutter"),
-                  _skillChip("Firebase"),
-                  _skillChip("REST APIs"),
-                  _skillChip("JWT Auth"),
-                ],
-              ),
+          
+                 Center(child: SkillsSection()),
+              
+              
               const SizedBox(height: 40),
               Text(
                 "✨ My Projects",
